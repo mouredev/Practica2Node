@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %> | <%= author %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+  </head>
+  <body>
+    <!--<h1><%= title %></h1>
+    <p><%= author %></p>-->
+    <p w3-include-html="/html/README.html"></p>
+    <script>
+      w3IncludeHTML();
+    </script>
+  </body>
+</html>

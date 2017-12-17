@@ -1,0 +1,236 @@
+<h1 id="nodepop-api-pr-ctica-js-node-js-mongodb-boot-vi-2017-">Nodepop API: Práctica JS/Node.js/MongoDB Boot VI (2017)</h1>
+<h2 id="por-brais-moure-morais">Por Brais Moure Morais</h2>
+<p>REST API para Nodepop, una aplicación de compraventa de artículos. En este caso, orientada a artículos del tipo &quot;<strong><em>smartphone</em></strong>&quot;.</p>
+<h2 id="requisitos">Requisitos</h2>
+<ul>
+<li><strong>Node.js</strong>. Versión usada: 8.9.1 (<a href="">https://nodejs.org/es/</a>)</li>
+<li><strong>MongoDB</strong>. Versión usada: 3.4.10 (<a href="">https://www.mongodb.com/es</a>)</li>
+<li><strong>NPM</strong> como gestor de paquetes. Versión usada: 5.6.0 (<a href="">https://www.npmjs.com/</a>)</li>
+<li><strong>GIT</strong> (<a href="">https://git-scm.com/</a>)</li>
+</ul>
+<h2 id="instalaci-n">Instalación</h2>
+<ol>
+<li>Descargar el proyecto. (<a href="">https://github.com/mouredev/Practica2Node.git</a>)</li>
+<li>Desde el directorio raíz, instalamos todas las dependencias del proyecto ejecutando:</li>
+</ol>
+<p><code>npm install</code></p>
+<ol>
+<li>Debemos tener arrancada nuestra BBDD MongoDB local.</li>
+<li>Desde el directorio raíz podremos inicializar la base de datos de pruebas ejecutando:</li>
+</ol>
+<p><code>npm run loadDB</code></p>
+<blockquote>
+<p><em>De esta forma, nuestra base de datos con nombre &quot;mongopop&quot; quedará inicializada con 18 anuncios de smartphones y un usuario para pruebas.</em></p>
+</blockquote>
+<ul>
+<li>User name: Test</li>
+<li>User email: test@test.com</li>
+<li><p>User password: test</p>
+</li>
+<li><p>Desde la raíz del proyecto, también arrancaremos nuestro servidor usando uno de los siguiente comandos:</p>
+</li>
+</ul>
+<p><code>npm start</code> <em>Ejecuta &quot;node ./bin/www&quot; (Sin debug ni nodemon)</em></p>
+<p><code>npm run dev</code> <em>Ejecuta &quot;DEBUG=nodeapi: nodemon ./bin/www&quot; (Con debug y nodemon)</em></p>
+<blockquote>
+<p>Nuestro servidor quedará arrancado en <strong><em><a href="">http://localhost:3000</a></em></strong> </p>
+<p><em>NOTA: En este index podremos consultar este mismo README ya que cada vez que se inicia nuestro servidor se está realizando una tranformación de .md a .html, para mostrarlo así en el navegador como página de inicio.</em></p>
+</blockquote>
+<h2 id="calidad-del-c-digo">Calidad del código</h2>
+<p>El proyecto posee configurado <strong>ESLint</strong> (<a href="">https://eslint.org/</a>) para controlar la calidad del código. Para ejecutar el validador (solo se ejecuta en determinados directorios), podremos lanzar el siguiente script en la raíz del proyecto:</p>
+<p><code>npm run eslint</code></p>
+<h1 id="operaciones-api">Operaciones API</h1>
+<h2 id="versi-n">Versión</h2>
+<p>Nos encontramos en la versión 1 del API.</p>
+<p>Todas las peticiones al API deberán realizarse sobre <code>{host}/apiv1/{endpoint_path}</code>.</p>
+<h2 id="internacionalizaci-n">Internacionalización</h2>
+<p>El API soporta internacionalización a la hora de mostrar errores por idioma en el endpoint de usuarios <strong>/users</strong>.</p>
+<ul>
+<li>Soporte:<ul>
+<li>Español (<strong>es</strong>)</li>
+<li>Inglés (<strong>en</strong>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="uso">Uso</h3>
+<p>Las peticiones al <strong><em>enpoint de usuarios</em></strong> podrán contener un parámetro en el body con nombre <code>lang</code> y el valor <strong>es</strong> o <strong>en</strong> para mostrar los posibles errores en el idioma seleccionado. El idioma por defecto en caso de no soportar el seleccionado o no existir el parámetro de configuración será <strong>es</strong>.</p>
+<h2 id="autenticaci-n">Autenticación</h2>
+<p>Para realizar peticiones al API, deberemos poseer un usuario y estar autenticados con este en el sistema.</p>
+<h3 id="uso">Uso</h3>
+<p>Una vez registramos o poseemos los datos de acceso de un usuario, deberemos obtener el token de autenticación asociado a este. Para ello realizaremos una petición a <strong>/users/authenticate</strong> con el email y la contraseña de nuestro usuario. Esta petición nos retornará un token JWT con nombre <code>token</code>. </p>
+<p>La decodificación de este token nos proporcinará el nombre y el email del usuario en los campos <code>user</code> y <code>email</code>.</p>
+<p>Dicho token tendremos que propagarlo enviándolo a cualquier endpoint del API que precise autenticación. Podremos enviarlo de las siguientes formas:</p>
+<ul>
+<li>El el body de la request dentro de la key <code>token</code>.</li>
+<li>En la query string de la petición con <code>?token={token}</code>.</li>
+<li>Como cabecera usando <code>x-access-token</code>.</li>
+</ul>
+<h2 id="usuarios-ruta-users">Usuarios. Ruta /users</h2>
+<p>Operaciones relacionadas con los usuarios del API.</p>
+<blockquote>
+<p>Este router no está autenticado.</p>
+</blockquote>
+<p>Un usuario tendrá estos posibles campos:</p>
+<p><code>name: String,
+email: String,
+password: String</code></p>
+<blockquote>
+<p>NOTA: Usar <strong><em>x-www-form-urlencoded</em></strong></p>
+</blockquote>
+<h3 id="post-users-authenticate">POST /users/authenticate</h3>
+<p>Autentica a un usuario en el API por email y contraseña.</p>
+<p><strong>REQUEST</strong>:</p>
+<ul>
+<li>Parámetros obligatorios: <code>email, password</code></li>
+<li>Parámetros opcionales: <code>lang</code></li>
+</ul>
+<p><strong>RESPONSE</strong>:</p>
+<ul>
+<li>Token JWT dentro de la variable <code>token</code>.</li>
+</ul>
+<p><em>{
+&quot;success&quot;: true,
+&quot;token&quot;: &quot;jwt_token&quot;
+}</em></p>
+<p><strong>ERRORES</strong>:</p>
+<ul>
+<li>HTTP 412 si no existe algún parámetro requerido.</li>
+<li>HTTP 401 si no existe el usuario que queremos autenticar por email y contraseña.</li>
+</ul>
+<h3 id="put-users">PUT /users</h3>
+<p>Registra a un usuario por nombre, email y contraseña.</p>
+<p><strong>REQUEST</strong>:</p>
+<ul>
+<li>Parámetros obligatorios: <code>name, email, password</code></li>
+<li>Parámetros opcionales: <code>lang</code></li>
+</ul>
+<p><strong>RESPONSE</strong>:</p>
+<ul>
+<li>Usuario registrado sin el campo <code>password</code>.</li>
+</ul>
+<p><em>{
+    &quot;success&quot;: true,
+    &quot;result&quot;: {
+        &quot;__v&quot;: 0,
+        &quot;email&quot;: &quot;test2@test.com&quot;,
+        &quot;name&quot;: &quot;Test 2&quot;,
+        &quot;_id&quot;: &quot;5a33cea9cbe40330ee2c712f&quot;
+    }
+}</em></p>
+<p><strong>ERRORES</strong>:</p>
+<ul>
+<li>HTTP 412 si no existe algún parámetro requerido o el email no es válido.</li>
+</ul>
+<h2 id="anuncios-ruta-advertisements">Anuncios. Ruta /advertisements</h2>
+<p>Operaciones relacionadas con anuncios.</p>
+<blockquote>
+<p>Este router está autenticado.</p>
+</blockquote>
+<p>Un anuncio tendrá estos posibles campos:</p>
+<p><code>name: String,
+sale: Boolean,
+price: Number,
+photo: String,
+tags: [String]</code></p>
+<h3 id="get-advertisements-tags">GET /advertisements/tags</h3>
+<p>Obtiene la lista de tags disponibles en los productos existentes.</p>
+<p><strong>REQUEST</strong>:</p>
+<ul>
+<li>No precisa parámetros.</li>
+</ul>
+<p><strong>RESPONSE</strong>:</p>
+<ul>
+<li>Array de tags.</li>
+</ul>
+<p><em>{
+    &quot;success&quot;: true,
+    &quot;result&quot;: [
+        &quot;android&quot;,
+        &quot;low&quot;,
+        &quot;nokia&quot;,
+        &quot;xiaomi&quot;,
+        &quot;motorola&quot;,
+        &quot;meizu&quot;,
+        &quot;bq&quot;,
+        &quot;mid&quot;,
+        &quot;samsung&quot;,
+        &quot;huawei&quot;,
+        &quot;high&quot;,
+        &quot;lg&quot;,
+        &quot;sony&quot;,
+        &quot;oneplus&quot;,
+        &quot;apple&quot;,
+        &quot;ios&quot;,
+        &quot;iphone&quot;,
+        &quot;google&quot;,
+        &quot;superhigh&quot;,
+        &quot;sumsung&quot;
+    ]
+}</em></p>
+<h3 id="get-advertisements-limit-skip-">GET /advertisements/{limit}/{skip}</h3>
+<p>Obtiene una lista de anuncios paginados obligatoriamente (para evitar pedir todos a la vez) y con posible filtrado.</p>
+<p><strong>REQUEST</strong>:</p>
+<ul>
+<li>Parámetros obligatorios: La url debe contener siempre los parámetros <code>/{limit}/{skip}</code> para indicar el número de anuncios a recuperar con <code>limit</code> y desde qué posición deben recuperarse con <code>skip</code>. Por ejemplo, con <code>/advertisements/10/0</code> recuperaremos 10 anuncios empezando desde el primer resultado obtenido.</li>
+</ul>
+<p><strong>REQUEST FILTERS</strong>:</p>
+<p>Esta operación permite realizar diferentes búsquedas de anuncios en base a criterios de filtrado. Estos criterios podrán usarse cada uno de ellos por separado o en conjunto.</p>
+<ul>
+<li><p><strong>Filtro por tag</strong>. Filtra los anuncios por uno o varios tags.</p>
+<ul>
+<li>Un tag: <code>/?tag={my_tag}</code>         </li>
+<li>N tags: <code>/?tag={my_tag}&amp;tag={my_tag2}...</code></li>
+</ul>
+</li>
+<li><p><strong>Filtro por tipo de anuncio</strong>. Filtra si un anuncio está en venta o en búsqueda.</p>
+<ul>
+<li>En venta: <code>/?sale=true</code></li>
+<li>En búsqueda: <code>/?sale=false</code></li>
+</ul>
+</li>
+<li><p><strong>Filtro por rango de precio</strong>. Filtra anuncios por su rango de precio.</p>
+<ul>
+<li>Entre un mínimo y un máximo: <code>/?price={min}-{max}</code></li>
+<li>Menores de: <code>/?price=-{max}</code></li>
+<li>Mayores de de: <code>/?price={min}-</code></li>
+<li>Iguales a: <code>/?price={price}</code></li>
+</ul>
+</li>
+<li><p><strong>Filtro por nombre</strong>. Filtra anuncios por su nombre, por coincidencia insensitiva desde el principio.</p>
+<ul>
+<li><code>/?name={name}</code> </li>
+</ul>
+</li>
+</ul>
+<p><strong>RESPONSE</strong>:</p>
+<ul>
+<li>Array de anuncios basados en los criterios de búsqueda.</li>
+</ul>
+<p><em>{
+    &quot;success&quot;: true,
+    &quot;result&quot;: [
+        {
+            &quot;_id&quot;: &quot;5a33b96b57c6d72fcd20bbe8&quot;,
+            &quot;name&quot;: &quot;iPhone X&quot;,
+            &quot;sale&quot;: true,
+            &quot;price&quot;: 1159,
+            &quot;photo&quot;: &quot;images/anuncios/iphonex.jpg&quot;,
+            &quot;__v&quot;: 0,
+            &quot;tags&quot;: [
+                &quot;superhigh&quot;,
+                &quot;iphone&quot;,
+                &quot;apple&quot;,
+                &quot;ios&quot;
+            ]
+        },
+        {
+        ...
+        }
+    ]
+}</em></p>
+<h2 id="im-genes-de-anuncios-ruta-images-anuncios">Imágenes de anuncios. Ruta /images/anuncios</h2>
+<p>Podremos consultar la imagen pública de un anuncio mediante la url base de nuestro host más la proporcionada por el anuncio en el campo <code>photo</code>:</p>
+<p><code>{host}/{photo}</code></p>
+<p><em>Por ejemplo <a href="">http://localhost:3000/images/anuncios/iphonex.jpg</a></em></p>
+<h3 id="autor">Autor</h3>
+<p><em>Brais Moure Morais. © 2017</em></p>

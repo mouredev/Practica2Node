@@ -1,0 +1,211 @@
+{
+    "advertisements": [
+        {
+            "name": "Nokia 3",
+            "sale": true,
+            "price": 139,
+            "photo": "images/anuncios/nokia3.jpg",
+            "tags": [
+                "low",
+                "nokia",
+                "android"
+            ]
+        },
+        {
+            "name": "Xiaomi Redmi Note 4X",
+            "sale": true,
+            "price": 157.91,
+            "photo": "images/anuncios/xiaomiredminote4x.jpg",
+            "tags": [
+                "low",
+                "xiaomi",
+                "android"
+            ]
+        },
+        {
+            "name": "Moto G5",
+            "sale": false,
+            "price": 225,
+            "photo": "images/anuncios/motog5.jpg",
+            "tags": [
+                "low",
+                "motorola",
+                "android"
+            ]
+        },
+        {
+            "name": "Meizu M5s",
+            "sale": true,
+            "price": 169,
+            "photo": "images/anuncios/meizum5s.jpg",
+            "tags": [
+                "low",
+                "meizu",
+                "android"
+            ]
+        },
+        {
+            "name": "BQ Aquaris V",
+            "sale": true,
+            "price": 199.90,
+            "photo": "images/anuncios/bqaquarisv.jpg",
+            "tags": [
+                "low",
+                "bq",
+                "android"
+            ]
+        },
+        {
+            "name": "BQ Aquaris X Pro",
+            "sale": false,
+            "price": 359,
+            "photo": "images/anuncios/bqaquarisxpro.jpg",
+            "tags": [
+                "mid",
+                "bq",
+                "android"
+            ]
+        },
+        {
+            "name": "Samsung Galaxy A5",
+            "sale": true,
+            "price": 419,
+            "photo": "images/anuncios/samsunggalaxya5.jpg",
+            "tags": [
+                "mid",
+                "samsung",
+                "android"
+            ]
+        },
+        {
+            "name": "Xiaomi Mi A1",
+            "sale": true,
+            "price": 229,
+            "photo": "images/anuncios/xiaomimia1.jpg",
+            "tags": [
+                "mid",
+                "xiaomi",
+                "android"
+            ]
+        },
+        {
+            "name": "Xiaomi Mi6",
+            "sale": false,
+            "price": 430,
+            "photo": "images/anuncios/xiaomimi6.jpg",
+            "tags": [
+                "mid",
+                "xiaomi",
+                "android"
+            ]
+        },
+        {
+            "name": "Huawei Mate 10 Lite",
+            "sale": true,
+            "price": 349,
+            "photo": "images/anuncios/huaweimate10lite.jpg",
+            "tags": [
+                "mid",
+                "huawei",
+                "android"
+            ]
+        },
+        {
+            "name": "LG G6",
+            "sale": true,
+            "price": 749,
+            "photo": "images/anuncios/lgg6.jpg",
+            "tags": [
+                "high",
+                "lg",
+                "android"
+            ]
+        },
+        {
+            "name": "Sony Xperia XZ1",
+            "sale": true,
+            "price": 699,
+            "photo": "images/anuncios/sonyxperiaxz1.jpg",
+            "tags": [
+                "high",
+                "sony",
+                "android"
+            ]
+        },
+        {
+            "name": "OnePlus 5",
+            "sale": false,
+            "price": 499,
+            "photo": "images/anuncios/oneplus5.jpg",
+            "tags": [
+                "high",
+                "oneplus",
+                "android"
+            ]
+        },
+        {
+            "name": "Xiaomi Mi MIX 2",
+            "sale": true,
+            "price": 524.89,
+            "photo": "images/anuncios/xiaomimimix2.jpg",
+            "tags": [
+                "high",
+                "xiaomi",
+                "android"
+            ]
+        },
+        {
+            "name": "iPhone 8 Plus",
+            "sale": true,
+            "price": 919,
+            "photo": "images/anuncios/iphone8plus.jpg",
+            "tags": [
+                "high",
+                "iphone",
+                "apple",
+                "ios"
+            ]
+        },
+        {
+            "name": "Google Pixel 2",
+            "sale": true,
+            "price": 959,
+            "photo": "images/anuncios/googlepixel2.jpg",
+            "tags": [
+                "superhigh",
+                "google",
+                "android"
+            ]
+        },
+        {
+            "name": "Samsung Galaxy Note 8",
+            "sale": false,
+            "price": 1010,
+            "photo": "images/anuncios/samsunggalaxynote8.jpg",
+            "tags": [
+                "superhigh",
+                "sumsung",
+                "android"
+            ]
+        },
+        {
+            "name": "iPhone X",
+            "sale": true,
+            "price": 1159,
+            "photo": "images/anuncios/iphonex.jpg",
+            "tags": [
+                "superhigh",
+                "iphone",
+                "apple",
+                "ios"
+            ]
+        }
+    ],
+    "users": [
+        {
+            "name": "Test",
+            "email": "test@test.com",
+            "password": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"
+        }
+    ]
+}
