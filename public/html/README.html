@@ -3,14 +3,14 @@
 <p>REST API para Nodepop, una aplicación de compraventa de artículos. En este caso, orientada a artículos del tipo &quot;<strong><em>smartphone</em></strong>&quot;.</p>
 <h2 id="requisitos">Requisitos</h2>
 <ul>
-<li><strong>Node.js</strong>. Versión usada: 8.9.1 (<a href="">https://nodejs.org/es/</a>)</li>
-<li><strong>MongoDB</strong>. Versión usada: 3.4.10 (<a href="">https://www.mongodb.com/es</a>)</li>
-<li><strong>NPM</strong> como gestor de paquetes. Versión usada: 5.6.0 (<a href="">https://www.npmjs.com/</a>)</li>
-<li><strong>GIT</strong> (<a href="">https://git-scm.com/</a>)</li>
+<li><strong>Node.js</strong>. Versión usada: 8.9.1 (<a href="https://nodejs.org/es/">https://nodejs.org/es/</a>)</li>
+<li><strong>MongoDB</strong>. Versión usada: 3.4.10 (<a href="https://www.mongodb.com/es">https://www.mongodb.com/es</a>)</li>
+<li><strong>NPM</strong> como gestor de paquetes. Versión usada: 5.6.0 (<a href="https://www.npmjs.com/">https://www.npmjs.com/</a>)</li>
+<li><strong>GIT</strong> (<a href="https://git-scm.com/">https://git-scm.com/</a>)</li>
 </ul>
 <h2 id="instalaci-n">Instalación</h2>
 <ol>
-<li>Descargar el proyecto. (<a href="">https://github.com/mouredev/Practica2Node.git</a>)</li>
+<li>Descargar el proyecto. (<a href="https://github.com/mouredev/Practica2Node.git">https://github.com/mouredev/Practica2Node.git</a>)</li>
 <li>Desde el directorio raíz, instalamos todas las dependencias del proyecto ejecutando:</li>
 </ol>
 <p><code>npm install</code></p>
@@ -33,11 +33,11 @@
 <p><code>npm start</code> <em>Ejecuta &quot;node ./bin/www&quot; (Sin debug ni nodemon)</em></p>
 <p><code>npm run dev</code> <em>Ejecuta &quot;DEBUG=nodeapi: nodemon ./bin/www&quot; (Con debug y nodemon)</em></p>
 <blockquote>
-<p>Nuestro servidor quedará arrancado en <strong><em><a href="">http://localhost:3000</a></em></strong> </p>
+<p>Nuestro servidor quedará arrancado en <strong><em><a href="http://localhost:3000">http://localhost:3000</a></em></strong> </p>
 <p><em>NOTA: En este index podremos consultar este mismo README ya que cada vez que se inicia nuestro servidor se está realizando una tranformación de .md a .html, para mostrarlo así en el navegador como página de inicio.</em></p>
 </blockquote>
 <h2 id="calidad-del-c-digo">Calidad del código</h2>
-<p>El proyecto posee configurado <strong>ESLint</strong> (<a href="">https://eslint.org/</a>) para controlar la calidad del código. Para ejecutar el validador (solo se ejecuta en determinados directorios), podremos lanzar el siguiente script en la raíz del proyecto:</p>
+<p>El proyecto posee configurado <strong>ESLint</strong> (<a href="https://eslint.org/">https://eslint.org/</a>) para controlar la calidad del código. Para ejecutar el validador (solo se ejecuta en determinados directorios), podremos lanzar el siguiente script en la raíz del proyecto:</p>
 <p><code>npm run eslint</code></p>
 <h1 id="operaciones-api">Operaciones API</h1>
 <h2 id="versi-n">Versión</h2>
@@ -231,15 +231,15 @@ tags: [String]</code></p>
 <h2 id="im-genes-de-anuncios-ruta-images-anuncios">Imágenes de anuncios. Ruta /images/anuncios</h2>
 <p>Podremos consultar la imagen pública de un anuncio mediante la url base de nuestro host más la proporcionada por el anuncio en el campo <code>photo</code>:</p>
 <p><code>{host}/{photo}</code></p>
-<p><em>Por ejemplo <a href="">http://localhost:3000/images/anuncios/iphonex.jpg</a></em></p>
+<p><em>Por ejemplo <a href="http://localhost:3000/images/anuncios/iphonex.jpg">http://localhost:3000/images/anuncios/iphonex.jpg</a></em></p>
 <h1 id="nodepop-aws-pr-ctica-devops-boot-vi-2018-">Nodepop AWS: Práctica DevOps Boot VI (2018)</h1>
 <h2 id="por-brais-moure-morais">Por Brais Moure Morais</h2>
 <p>Este proyecto se ha desplegado en una instancia EC2 de AWS con Nginx (como proxy inverso), Node, Mongo y PM2 junto con una web estática como indica la práctica.</p>
 <h3 id="url-acceso-nodepop">URL acceso Nodepop</h3>
-<p>Accediendo a la DNS pública del servidor <a href="">http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/</a> podremos consultar la página de inicio de este proyecto. Dicha web visualizará el contenido de este mismo README.md. Sobre esta raíz se podrán ejecutar todas las operaciones del API según idica su documentación.</p>
+<p>Accediendo a la DNS pública del servidor <a href="http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/">http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/</a> podremos consultar la página de inicio de este proyecto. Dicha web visualizará el contenido de este mismo README.md. Sobre esta raíz se podrán ejecutar todas las operaciones del API según idica su documentación.</p>
 <h3 id="verificaci-n-descarga-archivos-est-ticos">Verificación descarga archivos estáticos</h3>
-<p>Para poder verificar la cabecera HTTP personalizada <code>X-Owner: mouredev</code> podremos hacerlo en la propia página de inicio, revisando por ejemplo la descarga del archivo <em>style.css</em>, o directamente consultando una imagen como puede ser <a href="">http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/images/anuncios/iphonex.jpg</a>.</p>
+<p>Para poder verificar la cabecera HTTP personalizada <code>X-Owner: mouredev</code> podremos hacerlo en la propia página de inicio, revisando por ejemplo la descarga del archivo <em>style.css</em>, o directamente consultando una imagen como puede ser <a href="http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/images/anuncios/iphonex.jpg">http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/images/anuncios/iphonex.jpg</a>.</p>
 <h3 id="url-acceso-web-est-tica">URL acceso web estática</h3>
-<p>Accediendo directamente a la IP del servidor <a href="">http://34.216.237.18/</a>, podremos a visualizar la plantilla web estática desplegada y servida directamente por Nginx.</p>
+<p>Accediendo directamente a la IP del servidor <a href="http://34.216.237.18/">http://34.216.237.18/</a>, podremos a visualizar la plantilla web estática desplegada y servida directamente por Nginx.</p>
 <h3 id="autor">Autor</h3>
 <p><em>Brais Moure Morais. © 2017-2018</em></p>

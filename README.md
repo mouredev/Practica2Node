@@ -4,13 +4,13 @@
 REST API para Nodepop, una aplicación de compraventa de artículos. En este caso, orientada a artículos del tipo "***smartphone***".
 
 ## Requisitos
-* **Node.js**. Versión usada: 8.9.1 ([https://nodejs.org/es/]())
-* **MongoDB**. Versión usada: 3.4.10 ([https://www.mongodb.com/es]())
-* **NPM** como gestor de paquetes. Versión usada: 5.6.0 ([https://www.npmjs.com/]())
-* **GIT** ([https://git-scm.com/]())
+* **Node.js**. Versión usada: 8.9.1 ([https://nodejs.org/es/](https://nodejs.org/es/))
+* **MongoDB**. Versión usada: 3.4.10 ([https://www.mongodb.com/es](https://www.mongodb.com/es))
+* **NPM** como gestor de paquetes. Versión usada: 5.6.0 ([https://www.npmjs.com/](https://www.npmjs.com/))
+* **GIT** ([https://git-scm.com/](https://git-scm.com/))
 
 ## Instalación
-1. Descargar el proyecto. ([https://github.com/mouredev/Practica2Node.git]())
+1. Descargar el proyecto. ([https://github.com/mouredev/Practica2Node.git](https://github.com/mouredev/Practica2Node.git))
 2. Desde el directorio raíz, instalamos todas las dependencias del proyecto ejecutando:
 
 `npm install`
@@ -32,13 +32,13 @@ REST API para Nodepop, una aplicación de compraventa de artículos. En este cas
 
 `npm run dev` *Ejecuta "DEBUG=nodeapi: nodemon ./bin/www" (Con debug y nodemon)*
 
-> Nuestro servidor quedará arrancado en ***[http://localhost:3000]()*** 
+> Nuestro servidor quedará arrancado en ***[http://localhost:3000](http://localhost:3000)*** 
 
 > *NOTA: En este index podremos consultar este mismo README ya que cada vez que se inicia nuestro servidor se está realizando una tranformación de .md a .html, para mostrarlo así en el navegador como página de inicio.*
 
 ## Calidad del código
 
-El proyecto posee configurado **ESLint** ([https://eslint.org/]()) para controlar la calidad del código. Para ejecutar el validador (solo se ejecuta en determinados directorios), podremos lanzar el siguiente script en la raíz del proyecto:
+El proyecto posee configurado **ESLint** ([https://eslint.org/](https://eslint.org/)) para controlar la calidad del código. Para ejecutar el validador (solo se ejecuta en determinados directorios), podremos lanzar el siguiente script en la raíz del proyecto:
 
 `npm run eslint`
 
@@ -257,7 +257,7 @@ Podremos consultar la imagen pública de un anuncio mediante la url base de nues
 
 `{host}/{photo}`
 
-*Por ejemplo [http://localhost:3000/images/anuncios/iphonex.jpg]()*
+*Por ejemplo [http://localhost:3000/images/anuncios/iphonex.jpg](http://localhost:3000/images/anuncios/iphonex.jpg)*
 
 # Nodepop AWS: Práctica DevOps Boot VI (2018)
 ## Por Brais Moure Morais
@@ -265,13 +265,13 @@ Podremos consultar la imagen pública de un anuncio mediante la url base de nues
 Este proyecto se ha desplegado en una instancia EC2 de AWS con Nginx (como proxy inverso), Node, Mongo y PM2 junto con una web estática como indica la práctica.
 
 ### URL acceso Nodepop
-Accediendo a la DNS pública del servidor [http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/]() podremos consultar la página de inicio de este proyecto. Dicha web visualizará el contenido de este mismo README.md. Sobre esta raíz se podrán ejecutar todas las operaciones del API según idica su documentación.
+Accediendo a la DNS pública del servidor [http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/](http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/) podremos consultar la página de inicio de este proyecto. Dicha web visualizará el contenido de este mismo README.md. Sobre esta raíz se podrán ejecutar todas las operaciones del API según idica su documentación.
 
 ### Verificación descarga archivos estáticos
-Para poder verificar la cabecera HTTP personalizada `X-Owner: mouredev` podremos hacerlo en la propia página de inicio, revisando por ejemplo la descarga del archivo *style.css*, o directamente consultando una imagen como puede ser [http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/images/anuncios/iphonex.jpg]().
+Para poder verificar la cabecera HTTP personalizada `X-Owner: mouredev` podremos hacerlo en la propia página de inicio, revisando por ejemplo la descarga del archivo *style.css*, o directamente consultando una imagen como puede ser [http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/images/anuncios/iphonex.jpg](http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/images/anuncios/iphonex.jpg).
 
 ### URL acceso web estática
-Accediendo directamente a la IP del servidor [http://34.216.237.18/](), podremos a visualizar la plantilla web estática desplegada y servida directamente por Nginx.
+Accediendo directamente a la IP del servidor [http://34.216.237.18/](http://34.216.237.18/), podremos a visualizar la plantilla web estática desplegada y servida directamente por Nginx.
  
 ### Autor
 *Brais Moure Morais. © 2017-2018*
