@@ -232,5 +232,14 @@ tags: [String]</code></p>
 <p>Podremos consultar la imagen pública de un anuncio mediante la url base de nuestro host más la proporcionada por el anuncio en el campo <code>photo</code>:</p>
 <p><code>{host}/{photo}</code></p>
 <p><em>Por ejemplo <a href="">http://localhost:3000/images/anuncios/iphonex.jpg</a></em></p>
+<h1 id="nodepop-aws-pr-ctica-devops-boot-vi-2018-">Nodepop AWS: Práctica DevOps Boot VI (2018)</h1>
+<h2 id="por-brais-moure-morais">Por Brais Moure Morais</h2>
+<p>Este proyecto se ha desplegado en una instancia EC2 de AWS con Nginx (como proxy inverso), Node, Mongo y PM2 junto con una web estática como indica la práctica.</p>
+<h3 id="url-acceso-nodepop">URL acceso Nodepop</h3>
+<p>Accediendo a la DNS pública del servidor <a href="">http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/</a> podremos consultar la página de inicio de este proyecto. Dicha web visualizará el contenido de este mismo README.md. Sobre esta raíz se podrán ejecutar todas las operaciones del API según idica su documentación.</p>
+<h3 id="verificaci-n-descarga-archivos-est-ticos">Verificación descarga archivos estáticos</h3>
+<p>Para poder verificar la cabecera HTTP personalizada <code>X-Owner: mouredev</code> podremos hacerlo en la propia página de inicio, revisando por ejemplo la descarga del archivo <em>style.css</em>, o directamente consultando una imagen como puede ser <a href="">http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/images/anuncios/iphonex.jpg</a>.</p>
+<h3 id="url-acceso-web-est-tica">URL acceso web estática</h3>
+<p>Accediendo directamente a la IP del servidor <a href="">http://34.216.237.18/</a>, podremos a visualizar la plantilla web estática desplegada y servida directamente por Nginx.</p>
 <h3 id="autor">Autor</h3>
-<p><em>Brais Moure Morais. © 2017</em></p>
+<p><em>Brais Moure Morais. © 2017-2018</em></p>

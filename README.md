@@ -259,8 +259,22 @@ Podremos consultar la imagen pública de un anuncio mediante la url base de nues
 
 *Por ejemplo [http://localhost:3000/images/anuncios/iphonex.jpg]()*
 
+# Nodepop AWS: Práctica DevOps Boot VI (2018)
+## Por Brais Moure Morais
+
+Este proyecto se ha desplegado en una instancia EC2 de AWS con Nginx (como proxy inverso), Node, Mongo y PM2 junto con una web estática como indica la práctica.
+
+### URL acceso Nodepop
+Accediendo a la DNS pública del servidor [http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/]() podremos consultar la página de inicio de este proyecto. Dicha web visualizará el contenido de este mismo README.md. Sobre esta raíz se podrán ejecutar todas las operaciones del API según idica su documentación.
+
+### Verificación descarga archivos estáticos
+Para poder verificar la cabecera HTTP personalizada `X-Owner: mouredev` podremos hacerlo en la propia página de inicio, revisando por ejemplo la descarga del archivo *style.css*, o directamente consultando una imagen como puede ser [http://ec2-34-216-237-18.us-west-2.compute.amazonaws.com/images/anuncios/iphonex.jpg]().
+
+### URL acceso web estática
+Accediendo directamente a la IP del servidor [http://34.216.237.18/](), podremos a visualizar la plantilla web estática desplegada y servida directamente por Nginx.
+ 
 ### Autor
-*Brais Moure Morais. © 2017*
+*Brais Moure Morais. © 2017-2018*
 
 
  
