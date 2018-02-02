@@ -6,6 +6,7 @@
 'use strict'
 
 // Cargamos el conector a la base de datos. No lo asignamos, solo queremos que se ejecute
+require('dotenv').config();
 require('../lib/connectMongoose');
 
 // Cargamos lo modelos
